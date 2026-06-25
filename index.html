@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Djavan Pass - Gerador de Senhas Seguras</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>Djavan <span>Pass</span></h1>
+                <p>Gerador de Senhas Seguras</p>
+            </div>
+            <img src="https://picsum.photos/id/1015/800/400" alt="Djavan" class="djavan-image">
+        </header>
+
+        <main>
+            <div class="generator">
+                <div class="password-display">
+                    <input type="text" id="password" readonly>
+                    <button id="copy-btn" class="copy-btn">Copiar</button>
+                </div>
+
+                <div class="strength-bar">
+                    <div id="strength-fill" class="strength-fill"></div>
+                </div>
+                <p id="strength-text" class="strength-text">Força da senha</p>
+
+                <div class="options">
+                    <div class="option">
+                        <label for="length">Comprimento da senha:</label>
+                        <div class="slider-container">
+                            <input type="range" id="length" min="8" max="128" value="16">
+                            <span id="length-value">16</span>
+                        </div>
+                    </div>
+
+                    <div class="checkboxes">
+                        <label>
+                            <input type="checkbox" id="uppercase" checked>
+                            <span>A-Z (Maiúsculas)</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" id="lowercase" checked>
+                            <span>a-z (Minúsculas)</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" id="numbers" checked>
+                            <span>0-9 (Números)</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" id="symbols" checked>
+                            <span>!@#$% (Símbolos)</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" id="avoid-ambiguous" checked>
+                            <span>Evitar caracteres ambíguos (0O1Il)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button id="generate-btn" class="generate-btn">Gerar Senha Segura</button>
+            </div>
+
+            <div class="tips">
+                <h3>Dicas de Segurança</h3>
+                <ul>
+                    <li>Use senhas com pelo menos 16 caracteres</li>
+                    <li>Combine diferentes tipos de caracteres</li>
+                    <li>Nunca reutilize senhas</li>
+                    <li>Considere usar um gerenciador de senhas</li>
+                    <li>Ative autenticação de dois fatores (2FA)</li>
+                </ul>
+            </div>
+        </main>
+
+        <footer>
+            <p>Desenvolvido com ❤️ e criptografia forte • Inspirado em Djavan</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #1a1a1a, #3d2b1f);
+    color: #f5e8c7;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
