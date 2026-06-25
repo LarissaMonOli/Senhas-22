@@ -10,11 +10,13 @@
 <body>
     <div class="container">
         <header>
+            <div class="portrait-frame">
+                <img src="djvan.jpg" alt="Djavan" class="djavan-image">
+            </div>
             <div class="logo">
-                <h1>Djvan <span>Pass</span></h1>
+                <h1>Djavan <span>Pass</span></h1>
                 <p>Gerador de Senhas Seguras</p>
             </div>
-            <img src="djavan.jpg">
         </header>
 
         <main>
@@ -33,7 +35,7 @@
                     <div class="option">
                         <label for="length">Comprimento da senha:</label>
                         <div class="slider-container">
-                            <input type="range" id="length" min="8" max="128" value="16">
+                            <input type="range" id="length" min="8" max="20" value="16">
                             <span id="length-value">16</span>
                         </div>
                     </div>
@@ -67,6 +69,6 @@
         </footer>
     </div>
 
-    <script src="script.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

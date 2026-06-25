@@ -27,14 +27,13 @@ function generatePassword() {
     }
 
     let password = '';
-    const array = new Uint8Array(length);
-    crypto.getRandomValues(array);
+    const buffer = new Uint8Array(1);
 
-    for (let i = 0; i < length; i++) {
-        let index = array[i] % charset.length;
+    while (password.length < length) {
+        crypto.getRandomValues(buffer);
+        let index = buffer[0] % charset.length;
         let char = charset[index];
         if (avoidAmbiguous && ambiguous.includes(char)) {
-            i--;
             continue;
         }
         password += char;
